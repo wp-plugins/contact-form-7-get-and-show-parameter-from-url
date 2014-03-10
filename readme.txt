@@ -58,5 +58,8 @@ You cannot pass a value to the response email using this method, to do that, you
 
 == Changelog ==
 
+= 0.9.6 =
+* Update shortcode init for Contact Form 7 3.7.2
+
 = 0.9.5 =
 * Release Contact Form 7 module as a plugin
