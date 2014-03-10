@@ -26,7 +26,7 @@ such as order numbers, selected packages, or even security information.
 1. For getting a parameter to display as text, use [showparam value]
 
 The above examples assume a URL such as http://mywebsite.com/contact?value=hello.
-If you are using a different parameter such as order=hello, use [getparam hello]
+If you are using a different parameter such as order=hello, use [getparam order]
 
 == Frequently Asked Questions ==
 
