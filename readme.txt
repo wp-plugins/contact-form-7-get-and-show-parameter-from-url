@@ -3,7 +3,7 @@ Contributors: chuntley
 Tags: contact form 7, get parameter, show parameter
 Requires at least: 3.0.1
 Tested up to: 3.8
-Stable tag: 0.9.5
+Stable tag: 0.9.6
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
