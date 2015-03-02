@@ -3,7 +3,7 @@
  * Plugin Name: Contact Form 7 Get and Show Parameter from URL
  * Plugin URI: http://elementdesignllc.com/2011/11/contact-form-7-get-parameter-from-url-into-form-plugin/
  * Description: Get and Show Parameter from URL Contact Form 7 Plugin
- * Version: 0.9.6
+ * Version: 0.9.7
  * Author: Chad Huntley
  * Author URI: http://URI_Of_The_Plugin_Author
  * License: GPL2
@@ -40,7 +40,7 @@ function wpcf7_getparam_shortcode_handler($tag) {
     $name = $tag['name'];
     if (empty($name)) return '';
 
-    $html = '<input type="hidden" name="' . $name . '" value="'. $_GET[$name] . '" />';
+    $html = '<input type="hidden" name="' . $name . '" value="'. esc_attr( $_GET[$name] ) . '" />';
     return $html;
 }
 
@@ -50,6 +50,6 @@ function wpcf7_showparam_shortcode_handler($tag) {
     $name = $tag['name'];
     if (empty($name)) return '';
 
-    $html = $_GET[$name];
+    $html = esc_html( $_GET[$name] );
     return $html;
 }
