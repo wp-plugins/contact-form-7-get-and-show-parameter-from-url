@@ -2,8 +2,8 @@
 Contributors: chuntley
 Tags: contact form 7, get parameter, show parameter
 Requires at least: 3.0.1
-Tested up to: 4.1.1
-Stable tag: 0.9.7
+Tested up to: 6.3.1
+Stable tag: 2.0.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -57,6 +57,9 @@ For example, if the URL is http://mysite.com/contact?ordernum=12345, the shortco
 You cannot pass a value to the response email using this method, to do that, you will also have to add a hidden field.
 
 == Changelog ==
+
+= 2.0.0 =
+* Fixed for new WordPress version 6.3.1.
 
 = 0.9.7 =
 * Fixed XSS issue, thanks Ryan Hellyer (https://geek.hellyer.kiwi/) for the heads up!

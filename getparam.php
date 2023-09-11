@@ -3,8 +3,8 @@
  * Plugin Name: Contact Form 7 Get and Show Parameter from URL
  * Plugin URI: http://elementdesignllc.com/2011/11/contact-form-7-get-parameter-from-url-into-form-plugin/
  * Description: Get and Show Parameter from URL Contact Form 7 Plugin
- * Version: 0.9.7
- * Author: Chad Huntley
+ * Version: 2.0.0
+ * Author: Chad Huntley, mzm
  * Author URI: http://URI_Of_The_Plugin_Author
  * License: GPL2
  */
@@ -34,22 +34,29 @@ function wpcf7_add_shortcode_getparam() {
     }
 }
 
+// [getparam ordernum]
 function wpcf7_getparam_shortcode_handler($tag) {
-    if (!is_array($tag)) return '';
 
+    if (!isset($tag['name'])) {
+        return '<b>wpcf7_getparam_shortcode_handler: display-get-param requires a name attribute</b>';
+    }
     $name = $tag['name'];
-    if (empty($name)) return '';
-
-    $html = '<input type="hidden" name="' . $name . '" value="'. esc_attr( $_GET[$name] ) . '" />';
+    //$default = isset($tag['default']) ? $tag['default'] : '<blank value>';
+    $value = $_GET[$name];
+    if ($value == "") {
+        $value = "(NA)";
+    }
+    $html = '<input type="hidden" name="' . $name . '" value="'. htmlentities( $value ) . '" />';
     return $html;
 }
 
+// [showparam ordernum]
 function wpcf7_showparam_shortcode_handler($tag) {
-    if (!is_array($tag)) return '';
 
+    if (!isset($tag['name'])) {
+        return '<b>wpcf7_showparam_shortcode_handler: display-get-param requires a name attribute</b>';
+    }
     $name = $tag['name'];
-    if (empty($name)) return '';
-
-    $html = esc_html( $_GET[$name] );
-    return $html;
+    $default = isset($tag['default']) ? $tag['default'] : '(NA)';
+    return htmlentities(isset($_GET[$name]) ? $_GET[$name] : $default); 
 }
